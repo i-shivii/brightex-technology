@@ -1,0 +1,521 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+    min-height: 100vh;
+    /* background: url("https://images.unsplash.com/photo-1598125443421-779f98323fe4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    /* background-color: black; */
+    font-family: Roboto;
+    font-size: 16px;
+    background-color: black;
+    /* background-image: radial-gradient(circle, #6e6e6e, #525252, #373737, #1f1f1f, #000000); */
+}
+
+.container {
+    max-width: 1000px;
+    /* margin: 0 auto; */
+    padding: 11rem 0rem 0rem 0rem;
+    height: 30rem;
+    margin: -5rem 0rem 0rem 18rem;
+}
+.container h1{
+    font-size: 2rem;
+    margin: 1rem 2rem -5rem 27rem;
+    color: white;
+    font-family: math;
+      /* background: radial-gradient(circle, #9b51e0, #833fd8, #682ed0, #471cc8, #000ac1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; */
+}
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 4%;
+    padding: 12% 0;
+}
+
+.card {
+    padding: 0px;
+    background: rgba(0, 0, 0, 0.1);
+    border: 2px solid rgb(255, 255, 255);
+    backdrop-filter: blur(10px);
+    border-radius: 100px 100px 0px 0px;
+    transition: transform 0.3s ease, border 0.3s ease, background 0.3s ease;
+}
+
+
+.card:hover {
+    transform: scale(1.05);
+    background-image: linear-gradient(to right top, #9b51e0, #7b41c9, #5b32b3, #39249c, #061786);
+    /* border: 2px solid linear-gradient(to right top, #9b51e0, #7b41c9, #5b32b3, #39249c, #061786);; */
+    /* background: rgba(255, 255, 255, 0.042); */
+    border: 3px solid #9b51e0;
+    
+    /* border-image:linear-gradient(to right top, #9b51e0, #7b41c9, #5b32b3, #39249c, #061786); */
+}
+
+.card:hover ~ .card {
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+/* Reset opacity when not hovering */
+.grid:hover .card:not(:hover) {
+    opacity: 0.5;
+}
+
+.grid:hover .card:hover {
+    opacity: 1;
+}
+
+
+
+.card_title {
+    font-weight: normal;
+    font-size: 23px;
+    /* margin-bottom: 7px; */
+    font-family: math;
+    margin: 1rem -12rem 0rem 6rem;
+}
+
+.pricing {
+    font-weight: normal;
+    font-size: 30px;
+    font-weight: bold;
+    /* background: radial-gradient(circle, #9b51e0, #833fd8, #682ed0, #471cc8, #000ac1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; */
+    margin: 1rem 0rem -1rem 4rem;
+}
+
+.pricing .small {
+    font-size: 19px;
+}
+
+hr {
+    margin-top: 70px;
+}
+
+.features {
+    list-style-position: inside;
+    margin: 4rem 0rem 2rem 2rem;
+
+}
+
+.features li {
+    padding-bottom: 10px;
+    font-size: 15px;
+    /* list-style: none; */
+   
+
+}
+
+
+/* a.cta_btn {
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+    background-image: linear-gradient(to right top, #9b51e0, #7b41c9, #5b32b3, #39249c, #061786);
+    border-radius: 29px;
+    padding: 20px 0;
+    color: white;
+    text-decoration: none;
+    letter-spacing: 2px;
+    transition: background .3s ease;
+}
+
+a.cta_btn:hover {
+    background: white;
+    background-image: linear-gradient(to right top, #9b51e0, #7b41c9, #5b32b3, #39249c, #061786);
+  color:#39249c;
+} */
+
+.Algo {
+
+    line-height: 1.5rem;
+    margin: 2rem 2rem -2rem 1rem;
+    font-size: 15px;
+    justify-content: center;
+    text-align: justify;
+}
+
+a.cta_btn {
+    position: relative;
+    font-size: 14px;
+    margin: -1rem 0rem 1rem 4rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1em 2.5em;
+    display: inline-block;
+    border-radius: 6em;
+    transition: all .2s;
+    border: none;
+    font-family: inherit;
+    font-weight: 500;
+    color: white;
+    background-image: linear-gradient(to right top, #9b51e0, #7b41c9, #5b32b3, #39249c, #061786);
+}
+
+a.cta_btn:hover {
+    transform: translateY(-3px);
+    /* background-color: black; */
+}
+
+a.cta_btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+a.cta_btn::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+}
+
+a.cta_btn::after {
+    background-image: linear-gradient(to right top, #9b51e0, #7b41c9, #5b32b3, #39249c, #061786);
+}
+
+a.cta_btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+
+/* New CSS for changing button color on card hover */
+.card:hover .cta_btn {
+    /* background-color: black; */
+    background: black;
+}
+
+/* .link {
+    position: fixed;
+    background-color: #D12322;
+    padding: 23px 40px;
+    right: -99px;
+    border-radius: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    transform: rotate(-90deg);
+    font-size: 18px;
+    font-weight: 500;
+    color: #FFF;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all .1s ease-in-out;
+}
+
+.link i {
+    padding-left: 7px;
+}
+
+.link:hover {
+    text-decoration: underline;
+    background-color: black;
+} */
+/* @media only screen and (max-width: 1024px) {
+    .grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 2%;
+
+    }
+} */
+
+/* @media only screen and (max-width: 425px) {
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 2%;
+        padding-bottom: 25%;
+    }
+
+    .container {
+        padding: 0 1rem;
+    }
+
+    body {
+        font-size: 14px;
+    }
+
+    .card {
+        padding: 30px;
+    }
+
+    .card_title {
+        font-size: 24px;
+        margin-bottom: 12px;
+    }
+
+    .pricing {
+        font-size: 52px;
+    }
+
+    hr {
+        margin-top: 50px;
+    }
+
+    a.cta_btn {
+        font-size: 11px;
+    }
+} */
+
+
+@media (min-width: 320px) and (max-width: 479px) {
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 2%;
+        padding: 10% 0;
+    }
+    .container {
+        padding: 0 0.5rem;
+        margin: 3rem 1rem 0 3rem;
+    }
+    .card {
+        padding: 20px;
+        border-radius: 50px 50px 0 0;
+    }
+    .card_title {
+        font-size: 18px;
+        margin-bottom: 8px;
+    }
+    .pricing {
+        font-size: 28px;
+    }
+    .features {
+        margin: 2rem 0 1rem 1rem;
+    }
+    .features li {
+        font-size: 14px;
+    }
+    a.cta_btn {
+        font-size: 11px;
+        padding: 1.5em 3.5em;
+    }
+    .Algo {
+        line-height: 1.5rem;
+        margin: 2rem 2rem 0rem 1rem;
+        font-size: 17px;
+    }
+
+}
+
+@media (min-width: 480px) and (max-width: 639px){
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 2%;
+        padding: 10% 0;
+    }
+    .container {
+        padding: 0 0.5rem;
+        margin: 3rem 1rem 0 3rem;
+    }
+    .card {
+        padding: 20px;
+        border-radius: 50px 50px 0 0;
+    }
+    .card_title {
+        font-size: 20px;
+        margin-bottom: 8px;
+        margin-left: 9rem;
+    }
+    .pricing {
+        font-size: 28px;
+        margin-left: 7rem;
+    }
+    .features {
+        margin: 2rem 0 1rem 1rem;
+    }
+    .features li {
+        font-size: 15px;
+    }
+    a.cta_btn {
+        font-size: 15px;
+        /* padding: 0.5em 0.5em; */
+        margin-left: 5rem;
+    }
+    .Algo {
+        line-height: 1.5rem;
+        margin: 2rem 2rem 0rem 1rem;
+        font-size: 19px;
+    }
+}
+
+@media (min-width: 640px) and (max-width: 767px) and (-webkit-min-device-pixel-ratio: 2) {
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 2%;
+        padding: 0rem 5rem 27rem 3rem;
+    }
+    .container {
+        padding: 0 0.5rem;
+        margin: 3rem 1rem 0 3rem;
+    }
+    .card {
+        padding: 20px;
+        border-radius: 50px 50px 0 0;
+    }
+    .card_title {
+        font-size: 18px;
+        margin-bottom: 8px;
+    }
+    .pricing {
+        font-size: 28px;
+    }
+    .features {
+        margin: 2rem 0 1rem 1rem;
+    }
+    .features li {
+        font-size: 15px;
+    }
+    a.cta_btn {
+        font-size: 15px;
+      
+    }
+    .card_title {
+        font-size: 22px;
+        margin-bottom: 8px;
+        margin-left: 10rem;}
+}
+
+@media (min-width: 768px) and (max-width: 991px){
+    .grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 2%;
+      
+    }
+    .container {
+        padding: 0 4.5rem;
+        margin: 5rem 1rem 0 -3rem;
+        width: 70rem;
+    }
+    .card {
+        padding: 20px;
+        border-radius: 50px 50px 0 0;
+    }
+    .card_title {
+        margin-left: 8rem;
+        font-size: 2rem;
+    }
+    .pricing {
+        font-size: 28px;
+    }
+    .features {
+        margin: 2rem 0 1rem 1rem;
+    }
+    .features li {
+        font-size: 16px;
+    }
+    a.cta_btn {
+        font-size: 14px;
+       
+    }
+    .card_title{
+        margin-left: 7rem;
+    }
+    .Algo{
+        font-size: 19px;
+        margin-bottom: -1rem;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px){
+    .grid {
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 2%;
+      
+    }
+    .container {
+       
+            padding: 2px 0rem 0rem 4.5rem;
+            margin: 5rem 1rem 0 -3rem;
+            width: 73rem;
+    }
+    .card {
+        padding: 20px;
+        border-radius: 50px 50px 0 0;
+    }
+    .card_title {
+        margin-left: 4rem;
+        font-size: 2rem;
+    }
+    .pricing {
+        font-size: 28px;
+    }
+    .features {
+        margin: 2rem 0 1rem 1rem;
+    }
+    .features li {
+        font-size: 17px;
+    }
+    a.cta_btn {
+        font-size: 18px;
+        margin-left: 0rem;
+        margin-top: 0rem;
+        margin-right: -1rem;
+    }
+       
+    }
+  
+    .Algo{
+        font-size: 19px;
+        margin-bottom: -1rem;
+    }
+
+
+@media (min-width: 1210px) and (max-width: 1439px) and (-webkit-min-device-pixel-ratio: 2) {
+    .grid {
+        grid-template-columns: 1fr 1fr 1fr  ;
+        gap: 1%;
+
+    }
+    .container {
+        padding: 0 1rem;
+    }
+
+    body {
+        font-size: 14px;
+    }
+
+    .card {
+        padding: 30px;
+    }
+
+    .card_title {
+        font-size: 24px;
+        margin-bottom: 12px;
+        margin-left: 4rem;
+    }
+
+    .pricing {
+        font-size: 30px;
+    }
+
+    hr {
+        margin-top: 50px;
+    }
+
+    a.cta_btn {
+        font-size: 11px;
+    }
+}
+
+@media (min-width: 1440px) and (max-width: 1919px){
+    .grid {
+        grid-template-columns: 1fr 1fr 1fr;
+    gap: 1%;
+
+    }
+
+}
